@@ -80,3 +80,11 @@ y = torch.tensor([[2.0, 1, 4, 3], [1, 2, 3, 4], [4, 3, 2, 1]])
 # B = torch.tensor(A)
 # print(type(A))
 # print(type(B))
+
+
+# 将大小为1的张量转换为python的标量
+a = torch.tensor([3.5])
+print(a)
+print(a.item())
+print(float(a))
+print(int(a))
