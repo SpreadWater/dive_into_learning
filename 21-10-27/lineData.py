@@ -21,7 +21,7 @@ import torch
 # 两个矩阵的按元素的乘法称为 哈达玛积
 # print(A * B)
 
-# A = torch.arange(20 * 2).reshape(2, 5, 4)
+A = torch.arange(20, dtype=torch.float32).reshape(5, 4)
 # print(A.shape)
 # print(A.sum())
 
@@ -52,8 +52,23 @@ import torch
 # 某个轴计算A元素的累计总和
 
 # 点积是相同位置的按元素乘积的和
-x = torch.tensor([0.0, 1.0, 2.0, 3.0])
-y = torch.ones(4)
-print(x)
-print(y)
-print(torch.dot(x, y))
+# x = torch.tensor([0.0, 1.0, 2.0, 3.0])
+# y = torch.ones(4)
+# print(x)
+# print(y)
+# print(torch.dot(x, y))
+
+B = torch.ones(4, 3)
+# m次矩阵向量积，形成一个n*m的矩阵
+# print(torch.mm(A, B))
+
+# 范数是向量或者矩阵的长度.向量元素的平方和的平方根
+
+u = torch.tensor([3.0, -4.0])
+print(torch.norm(u))
+
+# L1范数，它表示为向量元素的绝对值之和
+print(torch.abs(u).sum())
+
+# 矩阵的F范数，是矩阵元素的平方和的平方根
+print(torch.norm(torch.ones((4, 9))))
